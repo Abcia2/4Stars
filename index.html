@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
+    </style>
+
+    <title>4 Stars</title>
+
+    <link rel="icon" size="192x192" href="./Assets/Icon1.png" id="PageIcon">
+    <link rel="stylesheet" href="./Style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <meta name="theme-color" content="#44429d" />
+</head>
+
+<body class="GameBackground">
+    <audio autoplay loop id="BGM">
+        <source src="./Assets/BGM.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="SplashLayer ScrollableLayer" id="SplashCon" onclick="HideSplashScreen()">
+        <div class="SplashLayerCon">
+            <div class="SplashLogoCon"><img src="./Assets/Logo.png" alt="4 Stars" class="LogoImg PulseAnimation"></div>
+            <h1 class="TextColorLight1">Tap to continue</h1>
+        </div>
+    </div>
+
+    <div class="FixedLayer Hidden ScrollableLayer" id="NamesLayer">
+        <div class="FixedLayerCon TextColorLight1">
+            <h1>Select Names</h1>
+            <div class="NameSelectorCon">
+                <div class="NameSelectorItem">
+                    <h1>Player 1</h1>
+                    <br>
+                    <input type="text" name="" id="PlayerInputName1" class="TextInput">
+                </div>
+                <div class="NameSelectorItem">
+                    <h1>Player 2</h1>
+                    <br>
+                    <input type="text" name="" id="PlayerInputName2" class="TextInput">
+                </div>
+            </div>
+            <button class="Button TapSFX1" onclick="ConfirmNames()">Done</button>
+        </div>
+    </div>
+
+    <div class="FixedLayer Hidden ScrollableLayer" id="TutroialLayer">
+        <div class="FixedLayerCon TextColorLight1 ScrollableLayer">
+            <img src="./Assets/TutorialImg.png" alt="Tutorial" class="TutorialImg">
+            <button class="Button TapSFX1" onclick="HideTutorial()">Done</button>
+        </div>
+    </div>
+
+    <div class="FixedLayer WaringLayer" id="WaringLayer">
+        <div class="FixedLayerCon TextColorLight1">
+            <img src="./Assets/TurnPhone.png" alt="Tutorial" class="TutorialImg">
+            <h3>Pleae put your device in lanndscape mode</h3>
+        </div>
+    </div>
+
+    <div class="FadeInLayer"></div>
+    <div class="FallingStarLayer Hidden" id="FallingStarLayer">
+        <div class="FallingStar" id="FallingStar"><img src="./Assets/Star1.png" id="FallingStarImg"></div>
+    </div>
+    <div class="ExternalContiner">
+        <div class="NowPlaying">
+            <h5>Now Playing:</h5>
+            <img src="./Assets/Star1.png" id="NowPlayingImg">
+        </div>
+
+        <div class="MuteButton" onclick="ToggleMusic()">
+            <img src="./Assets/AudioMuted.png" id="MuteButtonImg">
+        </div>
+        <div class="Header">
+            <img src="./Assets/Logo.png" alt="Logo" class="LogoImg">
+            <div class="HeaderTextsCon TextColorLight1">
+                <div class="PlayerScoreCon">
+                    <h2 class="PlayerName" id="Player1Name">Name1</h2>
+                    <h3 class="PlayerScore" id="PlayerScore1">Score: 000</h3>
+                </div>
+                <div class="PlayerScoreCon">
+                    <h2 class="PlayerName" id="Player2Name">Name2</h2>
+                    <h3 class="PlayerScore" id="PlayerScore2">Score: 000</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="GameContianer">
+            <div class="GameGrid GameGridBG1" id="GameGrid">
+                <div class="GridItemDropper" id="DropButton0" onclick="Drop(0)">Drop</div>
+                <div class="GridItemDropper" id="DropButton1" onclick="Drop(1)">Drop</div>
+                <div class="GridItemDropper" id="DropButton2" onclick="Drop(2)">Drop</div>
+                <div class="GridItemDropper" id="DropButton3" onclick="Drop(3)">Drop</div>
+                <div class="GridItemDropper" id="DropButton4" onclick="Drop(4)">Drop</div>
+                <div class="GridItemDropper" id="DropButton5" onclick="Drop(5)">Drop</div>
+                <div class="GridItemDropper" id="DropButton6" onclick="Drop(6)">Drop</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="Footer TextColorLight1">
+        <p>✦ 4 Stars || contact@abcia2.com ✦</p>
+        <div class="FooterButtons">
+            <button class="Button TapSFX1" onclick="ChangeNames()">Change Names</button>
+            <button class="Button TapSFX1" onclick="Reset()">Reset</button>
+            <button class="Button TapSFX1" onclick="Tutorial()">Tutorial</button>
+        </div>
+    </div>
+
+    <div class="ComboTextLayer Hidden" id="ComboTextLayer">
+        <h1 class="ComboText" id="ComboText">Combo x4</h1>
+
+        <div class="confetti-container"></div>
+
+    </div>
+    
+    <script src='./Script.js'></script>
+    <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+    <script>
+        kofiWidgetOverlay.draw('abcia2', {
+            'type': 'floating-chat',
+            'floating-chat.donateButton.text': 'Support me',
+            'floating-chat.donateButton.background-color': '#ffffff',
+            'floating-chat.donateButton.text-color': '#323842'
+        });
+    </script>
+</body>
+
+</html>

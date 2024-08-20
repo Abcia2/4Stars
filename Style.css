@@ -1,0 +1,677 @@
+/*Setup*/
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap");
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+ul,
+ol {
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+body {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: none;
+}
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+* {
+  transition: all 0.3s ease-in;
+}
+
+a {
+  text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d46d7c62;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a3204562;
+}
+
+.FadeInLayer {
+  transition: all 0.5s ease-in;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #5a2b33;
+  opacity: 100%;
+  z-index: 10;
+}
+
+/*Body*/
+body {
+  font-family: "Quicksand", Bold;
+  background-color: #150f37;
+  -webkit-user-select: none; 
+  -ms-user-select: none;
+  user-select: none; 
+}
+
+::-moz-selection {
+  color: #1f060b;
+  background-color: #cb849586;
+}
+
+::selection {
+  color: #1f060b;
+  background-color: #cb849586;
+}
+
+.GameBackground {
+  background-image: url(./Assets/Background.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  -ms-overflow-style: none;
+}
+
+.ExternalContiner {
+  width: 100%;
+}
+
+.FixedLayer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+  background-image: url(./Assets/DropBG.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  -ms-overflow-style: none;
+}
+
+.FixedLayerCon {
+  margin: auto auto;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.ScrollableLayer{
+  overflow-y: auto;
+  overflow-x: hidden; 
+  padding: 20px;
+}
+
+/*Header*/
+.Header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.LogoImg {
+  width: 30%;
+}
+
+.Footer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.FooterButtons{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+
+.FooterButtons button{
+    margin: 0 5px 5px 5px;
+}
+
+.FadeInLayer {
+  transition: all 0.5s ease-in;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #2a1135;
+  opacity: 100%;
+  z-index: 10;
+}
+
+.FallingStarLayer {
+  transition: all 0.5s ease-in-out;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #2a1135;
+  z-index: 10;
+  background-image: url(./Assets/DropBG.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  -ms-overflow-style: none;
+}
+
+.HeaderTextsCon {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.MuteButton {
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 5px 10px 5px 10px;
+  background-color: #d7c9df;
+  border: solid 5px #0e082e;
+  padding: 15px;
+  border-radius: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.NowPlaying1 {
+  background-color: #e9d5ca;
+  padding: 10px;
+  border-radius: 20px;
+  border: #896b5c solid 5px;
+}
+
+.NowPlaying2 {
+  background-color: #ce9ae7;
+  padding: 10px;
+  border-radius: 20px;
+  border: #6f4e80 solid 5px;
+}
+
+.PlayerScoreCon {
+  width: 35%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*Spalsh Screen*/
+.SplashLayer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+  background-image: url(./Assets/DropBG.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  -ms-overflow-style: none;
+}
+
+.SplashLayerCon {
+  margin: auto auto;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.SplashLogoCon {
+  height: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (orientation: portrait) {
+  .LogoImg {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@keyframes PulseAnimation {
+  0% {
+    scale: 1;
+  }
+
+  50% {
+    scale: 1.05;
+  }
+
+  100% {
+    scale: 1;
+  }
+}
+
+.PulseAnimation {
+  animation-name: PulseAnimation;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+
+/*Tutorial*/
+.TutorialImg{
+  height: 75%;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+
+/*Names Selector*/
+.NameSelectorCon {
+  margin: 20px 0 20px 0;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.NameSelectorItem {
+  margin: 20px 0 20px 0;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.TextInput {
+  animation: FadeIn 0.3s ease-in-out forwards;
+  background-color: #d7c9df;
+  border: solid 5px #0e082e;
+  border-radius: 25px;
+  padding: 10px 25px 10px 25px;
+}
+
+.TextInputError {
+  animation: FadeIn 0.3s ease-in-out forwards;
+  background-color: #db889b;
+  border: solid 5px #2e0816;
+  border-radius: 25px;
+  padding: 10px 25px 10px 25px;
+}
+
+.Button {
+  font-size: x-large;
+  background-color: #d7c9df;
+  border: solid 5px #0e082e;
+  border-radius: 25px;
+  padding: 10px 25px 10px 25px;
+}
+
+/*Grid*/
+.GameContianer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.GameGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 5px;
+  width: auto;
+  height: auto;
+}
+
+.GameGridBG1{
+  background-color: #e9d5ca;
+  border: solid 5px #896b5c;
+  border-radius: 25px;
+  padding: 10px 25px 10px 25px;
+}
+
+.GameGridBG2{
+  background-color: #ce9ae7;
+  border: solid 5px #6f4e80;
+  border-radius: 25px;
+  padding: 10px 25px 10px 25px;
+}
+
+.GridItem {
+  background-color: #827397;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  border: solid 5px #0e082e;
+  border-radius: 20px;
+  width: 100px;
+  height: 100px;
+}
+
+.GridItemDropper {
+  background-color: #ad9cc4;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  border: solid 5px #0e082e;
+  border-radius: 20px;
+  width: 100px;
+  height: 100px;
+}
+
+.GridItemDropper:hover {
+  background-color: #896794;
+}
+
+.GridItemDropperDeactivated {
+  background-color: #70697a;
+  color: #91889c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  border: solid 5px #0e082e;
+  border-radius: 20px;
+}
+
+@media (max-width: 750px) {
+  .GridItem {
+    width: 50px; /* Reduce the size of grid items */
+    height: 50px;
+  }
+
+  .GameGridBG1, .GameGridBG2 {
+    padding: 5px 10px; /* Adjust padding for smaller screens */
+    border-width: 3px; /* Thinner border on smaller screens */
+  }
+
+  .GridItemDropper {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.WaringLayer{
+  display: none;
+}
+
+@media (orientation : portrait) {
+  .WaringLayer{
+    display: block;
+  }
+}
+
+/*Falling Star*/
+.FallingStar {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  top: -600px;
+  left: calc(50% - 200px);
+}
+
+.FallingStar img {
+  width: 100%;
+  height: 100%;
+}
+
+.FallAnimation {
+  animation: Fall 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes Fall {
+  0% {
+    top: -600px;
+    transform: rotate(0deg);
+  }
+  100% {
+    top: 100vh;
+    transform: rotate(180deg);
+  }
+}
+
+.FadeInOut {
+  animation: FadeInOut 1.6s ease-in-out forwards;
+}
+
+.FadeInOut2 {
+  animation: FadeInOut2 3.6s ease-in-out forwards;
+}
+
+.FadeIn {
+  animation: FadeIn 0.3s ease-in-out forwards;
+}
+
+.FadeOut {
+  animation: FadeOut 0.6s ease-in-out forwards;
+}
+
+@keyframes FadeInOut {
+  0% {
+    opacity: 0;
+  }
+  18.75% {
+    opacity: 1;
+  }
+  68.75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes FadeInOut2 {
+  0% {
+    opacity: 0;
+  }
+  10.53% {
+    opacity: 1;
+  }
+  89.47% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes FadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes FadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/*NowPlaying*/
+.NowPlaying {
+  width: 130px;
+  height: 130px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 0 10px 5px 0;
+  background-color: #d7c9df;
+  border: solid 5px #0e082e;
+  padding: 15px;
+  border-radius: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.NowPlaying img {
+  height: 75%;
+}
+
+.NowPlaying h5 {
+  margin-top: 9px;
+}
+
+/*Pop in*/
+.ComboTextLayer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url(./Assets/Background.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  -ms-overflow-style: none;
+}
+
+.ComboText {
+  font-size: 70px;
+  opacity: 0;
+  animation: popIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  animation-delay: 0.5s;
+}
+
+.Player1 {
+  color: #e9d5ca;
+  font-family: "Quicksand", Bold;
+  text-shadow: 1px 1px 2px #896b5c, -1px -1px 2px #896b5c, 1px -1px 2px #896b5c,
+    -1px 1px 2px #896b5c, 0px 0px 5px #896b5c;
+}
+
+.Player2 {
+  color: #ce9ae7;
+  font-family: "Quicksand", Bold;
+
+  text-shadow: 1px 1px 2px #6f4e80, -1px -1px 2px #6f4e80, 1px -1px 2px #6f4e80,
+    -1px 1px 2px #6f4e80, 0px 0px 5px #6f4e80;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.5) rotate(0deg);
+    /* Initial scale and rotation */
+    opacity: 0;
+  }
+
+  70% {
+    transform: scale(1.2) rotate(5deg);
+    /* Scale up and rotate slightly */
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1) rotate(0deg);
+    /* Return to normal scale and rotation */
+    opacity: 1;
+  }
+}
+
+/*Colors*/
+.TextColorLight1 {
+  color: #e4f1f7;
+}
+
+.TextColorDark1 {
+  color: #0a2531;
+}
+
+.Hidden {
+  display: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+}
