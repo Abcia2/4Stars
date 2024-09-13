@@ -263,31 +263,37 @@ CheckTie = 0;
  if (PositionsArray[0][0] != 0) {
     DropButton0.classList.add("GridItemDropperDeactivated");
 
-CheckTie++
+CheckTie++;
     DropButton0.classList.remove("GridItemDropper");
   }
   if (PositionsArray[0][1] != 0) {
     DropButton1.classList.add("GridItemDropperDeactivated");
-   CheckTie++ DropButton1.classList.remove("GridItemDropper");
+   CheckTie++;
+ DropButton1.classList.remove("GridItemDropper");
   }
   if (PositionsArray[0][2] != 0) {
     DropButton2.classList.add("GridItemDropperDeactivated");
-   CheckTie++ DropButton2.classList.remove("GridItemDropper");
+   CheckTie++;
+ DropButton2.classList.remove("GridItemDropper");
   }
   if (PositionsArray[0][3] != 0) {
     DropButton3.classList.add("GridItemDropperDeactivated");
-   CheckTie++ DropButton3.classList.remove("GridItemDropper");
+   CheckTie++;
+ DropButton3.classList.remove("GridItemDropper");
   }
   if (PositionsArray[0][4] != 0) {
     DropButton4.classList.add("GridItemDropperDeactivated");
-   CheckTie++ DropButton4.classList.remove("GridItemDropper");
+   CheckTie++;
+ DropButton4.classList.remove("GridItemDropper");
   }
   if (PositionsArray[0][5] != 0) {
     DropButton5.classList.add("GridItemDropperDeactivated");
-   CheckTie++ DropButton5.classList.remove("GridItemDropper");
+   CheckTie++;
+ DropButton5.classList.remove("GridItemDropper");
   }
   if (PositionsArray[0][6] != 0) {
-   CheckTie++ DropButton6.classList.add("GridItemDropperDeactivated");
+   CheckTie++;
+ DropButton6.classList.add("GridItemDropperDeactivated");
     DropButton6.classList.remove("GridItemDropper");
   }
 }
