@@ -461,7 +461,7 @@ function Drop(Column) {
   }
 }
 
-function in ComboTextApper(numero) {
+function ComboTextApper(numero) {
   ComboTextLayer.classList.remove("Hidden");
   ComboTextLayer.classList.add("FadeInOut2");
 
