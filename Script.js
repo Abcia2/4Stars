@@ -59,6 +59,7 @@ const FallingStarSFX = new Audio();
 FallingStarSFX.src = './Assets/FallingStarSound.mp3';
 const VictorieSFX = new Audio();
 VictorieSFX.src = './Assets/VictorySound.mp3';
+let CheckTie = 0;
 
 
 
@@ -256,34 +257,43 @@ function UpdateGrid() {
   let DropButton4 = document.getElementById("DropButton4");
   let DropButton5 = document.getElementById("DropButton5");
   let DropButton6 = document.getElementById("DropButton6");
-  if (PositionsArray[0][0] != 0) {
+
+CheckTie = 0;
+
+ if (PositionsArray[0][0] != 0) {
     DropButton0.classList.add("GridItemDropperDeactivated");
+
+CheckTie++
     DropButton0.classList.remove("GridItemDropper");
   }
   if (PositionsArray[0][1] != 0) {
     DropButton1.classList.add("GridItemDropperDeactivated");
-    DropButton1.classList.remove("GridItemDropper");
+   CheckTie++ DropButton1.classList.remove("GridItemDropper");
   }
   if (PositionsArray[0][2] != 0) {
     DropButton2.classList.add("GridItemDropperDeactivated");
-    DropButton2.classList.remove("GridItemDropper");
+   CheckTie++ DropButton2.classList.remove("GridItemDropper");
   }
   if (PositionsArray[0][3] != 0) {
     DropButton3.classList.add("GridItemDropperDeactivated");
-    DropButton3.classList.remove("GridItemDropper");
+   CheckTie++ DropButton3.classList.remove("GridItemDropper");
   }
   if (PositionsArray[0][4] != 0) {
     DropButton4.classList.add("GridItemDropperDeactivated");
-    DropButton4.classList.remove("GridItemDropper");
+   CheckTie++ DropButton4.classList.remove("GridItemDropper");
   }
   if (PositionsArray[0][5] != 0) {
     DropButton5.classList.add("GridItemDropperDeactivated");
-    DropButton5.classList.remove("GridItemDropper");
+   CheckTie++ DropButton5.classList.remove("GridItemDropper");
   }
   if (PositionsArray[0][6] != 0) {
-    DropButton6.classList.add("GridItemDropperDeactivated");
+   CheckTie++ DropButton6.classList.add("GridItemDropperDeactivated");
     DropButton6.classList.remove("GridItemDropper");
   }
+}
+
+if (CheckTie >= 7){
+ComboTextApper(4);
 }
 UpdateGrid();
 
@@ -445,7 +455,7 @@ function Drop(Column) {
   }
 }
 
-function ComboTextApper(numero) {
+function in ComboTextApper(numero) {
   ComboTextLayer.classList.remove("Hidden");
   ComboTextLayer.classList.add("FadeInOut2");
 
@@ -454,11 +464,15 @@ function ComboTextApper(numero) {
     ComboText.classList.remove("Player2");
     ComboText.innerText = `${SettingsSaves.PlayerName1} Won`;
     SettingsSaves.Score1++;
-  } else {
+  } else if (numero == 2){
     ComboText.classList.add("Player2");
     ComboText.classList.remove("Player1");
     ComboText.innerText = `${SettingsSaves.PlayerName2} Won`;
     SettingsSaves.Score2++;
+  }
+else {
+    ComboText.classList.add("Player4");
+    ComboText.innerText = `Tie`;
   }
 
   localStorage.setItem("4StarsSettings", JSON.stringify(SettingsSaves));
