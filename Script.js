@@ -1,10 +1,6 @@
 console.log("Abcia2 :D");
 let pathname = window.location.pathname;
 
-if(pathname != "/4Stars/"){
-  window.location.href = "/4Stars/";
-}
-
 document.addEventListener("DOMContentLoaded", function () {
   let FadeInLayer = document.querySelector(".FadeInLayer");
   FadeInLayer.style.transition = "opacity 1s";
@@ -50,18 +46,16 @@ let PageIcon = document.getElementById("PageIcon");
 let TutroialLayer = document.getElementById("TutroialLayer");
 let MuteButtonImg = document.getElementById("MuteButtonImg");
 let CurrentPalyer = 1;
+let Tie = false;
 
 let BGM = document.getElementById("BGM");
-let TapSFX1Items = document.querySelectorAll('.TapSFX1');
+let TapSFX1Items = document.querySelectorAll(".TapSFX1");
 const ButtonClickSFX1 = new Audio();
-ButtonClickSFX1.src = './Assets/TapSound.mp3';
+ButtonClickSFX1.src = "./Assets/TapSound.mp3";
 const FallingStarSFX = new Audio();
-FallingStarSFX.src = './Assets/FallingStarSound.mp3';
+FallingStarSFX.src = "./Assets/FallingStarSound.mp3";
 const VictorieSFX = new Audio();
-VictorieSFX.src = './Assets/VictorySound.mp3';
-let CheckTie = 0;
-
-
+VictorieSFX.src = "./Assets/VictorySound.mp3";
 
 /*Storage*/
 let SettingsSaves = {
@@ -76,15 +70,12 @@ let SettingsSaves = {
 if (localStorage.getItem("4StarsSettings")) {
   let TempLoad = localStorage.getItem("4StarsSettings");
   SettingsSaves = JSON.parse(TempLoad);
-  if(SettingsSaves.Volume == 0){
-    MuteButtonImg.src="./Assets/AudioActivated.png"
-  }
-  else{
-    MuteButtonImg.src="./Assets/AudioMuted.png"
+  if (SettingsSaves.Volume == 0) {
+    MuteButtonImg.src = "./Assets/AudioActivated.png";
+  } else {
+    MuteButtonImg.src = "./Assets/AudioMuted.png";
   }
 }
-
-
 
 //UI
 function HideSplashScreen() {
@@ -112,12 +103,11 @@ function HideTutorial() {
   if (!SettingsSaves.SelectedNames) {
     NamesLayer.classList.remove("Hidden");
     NamesLayer.classList.add("FadeIn");
-  } 
-    setTimeout(() => {
-      TutroialLayer.classList.remove("FadeOut");
-      TutroialLayer.classList.add("Hidden");
-    }, 300);
-  
+  }
+  setTimeout(() => {
+    TutroialLayer.classList.remove("FadeOut");
+    TutroialLayer.classList.add("Hidden");
+  }, 300);
 }
 
 function ChangeNames() {
@@ -182,22 +172,20 @@ function ConfirmNames() {
   }
 }
 
-
 //Music
-function ToggleMusic(){
-  if(SettingsSaves.Volume == 0){
+function ToggleMusic() {
+  if (SettingsSaves.Volume == 0) {
     SettingsSaves.Volume = 1;
-    MuteButtonImg.src="./Assets/AudioMuted.png"
+    MuteButtonImg.src = "./Assets/AudioMuted.png";
     BGM.volume = SettingsSaves.Volume;
     localStorage.setItem("4StarsSettings", JSON.stringify(SettingsSaves));
-    return
-  }
-  else{
+    return;
+  } else {
     SettingsSaves.Volume = 0;
-    MuteButtonImg.src="./Assets/AudioActivated.png"
+    MuteButtonImg.src = "./Assets/AudioActivated.png";
     BGM.volume = SettingsSaves.Volume;
     localStorage.setItem("4StarsSettings", JSON.stringify(SettingsSaves));
-    return
+    return;
   }
 }
 
@@ -206,9 +194,9 @@ function PlayTapSFX1() {
   ButtonClickSFX1.currentTime = 0;
   ButtonClickSFX1.play();
 }
-TapSFX1Items.forEach(function(element) {
-  element.addEventListener('click', function() {
-      PlayTapSFX1()
+TapSFX1Items.forEach(function (element) {
+  element.addEventListener("click", function () {
+    PlayTapSFX1();
   });
 });
 
@@ -223,8 +211,6 @@ function VictorieSFXPlay() {
   VictorieSFX.currentTime = 0;
   VictorieSFX.play();
 }
-
-
 
 //Game
 function UpdateGrid() {
@@ -258,52 +244,56 @@ function UpdateGrid() {
   let DropButton5 = document.getElementById("DropButton5");
   let DropButton6 = document.getElementById("DropButton6");
 
-CheckTie = 0;
-
- if (PositionsArray[0][0] != 0) {
+  if (PositionsArray[0][0] != 0) {
     DropButton0.classList.add("GridItemDropperDeactivated");
-
-CheckTie++;
     DropButton0.classList.remove("GridItemDropper");
   }
   if (PositionsArray[0][1] != 0) {
     DropButton1.classList.add("GridItemDropperDeactivated");
-   CheckTie++;
- DropButton1.classList.remove("GridItemDropper");
+    DropButton1.classList.remove("GridItemDropper");
   }
   if (PositionsArray[0][2] != 0) {
     DropButton2.classList.add("GridItemDropperDeactivated");
-   CheckTie++;
- DropButton2.classList.remove("GridItemDropper");
+    DropButton2.classList.remove("GridItemDropper");
   }
   if (PositionsArray[0][3] != 0) {
     DropButton3.classList.add("GridItemDropperDeactivated");
-   CheckTie++;
- DropButton3.classList.remove("GridItemDropper");
+    DropButton3.classList.remove("GridItemDropper");
   }
   if (PositionsArray[0][4] != 0) {
     DropButton4.classList.add("GridItemDropperDeactivated");
-   CheckTie++;
- DropButton4.classList.remove("GridItemDropper");
+    DropButton4.classList.remove("GridItemDropper");
   }
   if (PositionsArray[0][5] != 0) {
     DropButton5.classList.add("GridItemDropperDeactivated");
-   CheckTie++;
- DropButton5.classList.remove("GridItemDropper");
+    DropButton5.classList.remove("GridItemDropper");
   }
   if (PositionsArray[0][6] != 0) {
-   CheckTie++;
- DropButton6.classList.add("GridItemDropperDeactivated");
+    DropButton6.classList.add("GridItemDropperDeactivated");
     DropButton6.classList.remove("GridItemDropper");
   }
 }
 
-if (CheckTie >= 7){
-ComboTextApper(4);
+if (CheckTie >= 7) {
+  ComboTextApper(4);
 }
 UpdateGrid();
 
+function CheckTie() {
+  if (
+    PositionsArray[0][0] &&
+    PositionsArray[0][1] != 0 &&
+    PositionsArray[0][2] != 0 &&
+    PositionsArray[0][3] != 0 &&
+    PositionsArray[0][4] != 0 &&
+    PositionsArray[0][5] != 0 &&
+    PositionsArray[0][6] != 0
+  ) {
+    return true;
+  }
 
+  return false;
+}
 
 //Play Controls
 function CheckWin(X, Y, Value) {
@@ -400,6 +390,11 @@ function CheckWin(X, Y, Value) {
     if (CounterDiagonal2 >= 4) return true;
   }
 
+  if (CheckTie()) {
+    Tie = true;
+    return false;
+  }
+
   return false;
 }
 
@@ -409,7 +404,7 @@ function Drop(Column) {
     FallingStarLayer.classList.remove("Hidden");
     FallingStarLayer.classList.add("FadeInOut");
     FallingStar.classList.add("FallAnimation");
-    FallingStarSFXPlay()
+    FallingStarSFXPlay();
 
     if (CurrentPalyer == 1) {
       setTimeout(() => {
@@ -445,8 +440,16 @@ function Drop(Column) {
         if (CheckWin(Column, Index, CurrentPalyer)) {
           setTimeout(() => {
             ComboTextApper(CurrentPalyer - 1);
-            VictorieSFXPlay()
+            VictorieSFXPlay();
           }, 850);
+        } else {
+          if (Tie) {
+            setTimeout(() => {
+              ComboTextApper(4);
+              VictorieSFXPlay();
+              Tie = false;
+            }, 850);
+          }
         }
       }
     }, 500);
@@ -470,13 +473,12 @@ function ComboTextApper(numero) {
     ComboText.classList.remove("Player2");
     ComboText.innerText = `${SettingsSaves.PlayerName1} Won`;
     SettingsSaves.Score1++;
-  } else if (numero == 2){
+  } else if (numero == 2) {
     ComboText.classList.add("Player2");
     ComboText.classList.remove("Player1");
     ComboText.innerText = `${SettingsSaves.PlayerName2} Won`;
     SettingsSaves.Score2++;
-  }
-else {
+  } else {
     ComboText.classList.add("Player4");
     ComboText.innerText = `Tie`;
   }
@@ -500,4 +502,3 @@ else {
     ComboTextLayer.classList.add("Hidden");
   }, 3600);
 }
-
